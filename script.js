@@ -7,7 +7,6 @@ const dots = Array.from(dotsNav.children);
 
 const slideWidth = slides[0].getBoundingClientRect().width;
 
-// Arrange slide next to one another
 const setSlidePosition = (slide,index) => {
     slide.style.left = slideWidth * index + 'px';
 };
@@ -26,7 +25,6 @@ const updateDot = (currentDot, targetDot) => {
 }
 
 
-// When click right button
 nextButton.addEventListener('click', e =>{
     const currentSlide = track.querySelector('.current-slide');
     const nextSlide = currentSlide.nextElementSibling;
@@ -44,7 +42,6 @@ nextButton.addEventListener('click', e =>{
     }
 });
 
-// When click left button
 prevButton.addEventListener('click', e =>{
     const currentSlide = track.querySelector('.current-slide');
     const prevSlide = currentSlide.previousElementSibling;
@@ -62,9 +59,8 @@ prevButton.addEventListener('click', e =>{
     }
 });
 
-// When click navbar move to that slide
+
 dotsNav.addEventListener('click', e => {
-    // What indicator is clicked
     const targetDot = e.target.closest('button');
 
     if (!targetDot) return;
